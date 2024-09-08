@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação | Seje</title>
+    <script src="js/pagina.js" defer></script>
+    <style>
+        *{
+            margin: 0;
+        }
+        ::-webkit-scrollbar{
+            width: 7px;
+        }
+        ::-webkit-scrollbar-button{
+            background-color: green;
+            color: black;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid gray;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: gray;
+        }
+        body{
+            background:linear(45deg, #1b98e0,blueviolet);
+        }
+        header{
+            background-color: #fff;
+            height: 35px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 35px;
+            box-shadow: 0px 1px 7px 0px gray;
+        }
+        header h2{
+            font-size: 28px;
+        }
+        .links_titulo{
+            margin-top: -25px;
+            margin-left: 140px;
+        }
+        .links_titulo a{
+            font-family: sans-serif;
+            font-size: 15px;
+            padding: 4px;
+            text-decoration: none;
+            color: grey;
+            overflow: auto;
+        }
+        .links_esquerdos{
+            margin-top: -18px;
+            text-align: right;
+        }
+        .links_esquerdos a{
+            font-family: sans-serif;
+            font-size: 15px;
+            padding: 10px;
+            text-decoration: none;
+            color: gray;
+        }
+        .links_titulo select{
+            width: 112px;
+            border: 0;
+            font-family: sans-serif;
+            font-size: 15px;
+            color: gray;
+        }
+        .corpo_site{
+            margin-top: 90px;
+            padding: 29px;
+            width: auto;
+        }
+        .links_corpo{
+            text-align: left;
+            position: relative absolute;
+            padding: 8px;  
+        }
+        .links_corpo a{
+            font-family: times;
+            font-size: 15px;
+            margin-left: 3px;
+            padding: 8px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #1b98e0;
+            background:linear-gradient(157deg, #1b98e0,blueviolet);
+            border-radius: 5%;
+            
+        }
+        .parag_ant_titulo{
+            font-family: sans-serif;
+            margin-top: 70px;
+            color: white;
+            margin-left: 14px;
+        }
+        .parag_titulo{
+            margin-left: 9px;
+            font-size: 45px;
+            color:linear-gradient(165deg, #1b98e0,blueviolet);
+            text-align: justify;
+            margin-top: 48px;
+        }
+        .info_sobre_software{
+            margin-top: 35px;
+            color: gray;
+            text-align: justify;
+            margin-left: 11px;
+        }
+        .bt_donwload{
+            margin-top: 12px;
+            margin-left: 11px;
+            background:linear-gradient(165deg, #1b98e0,blueviolet);
+            padding: 25px;
+            width: 400px;
+            padding-top: 17px;
+            color: white;
+            padding-bottom: 17px;
+            text-decoration: none;
+            transition: 0.5s ease-in-out;
+        }
+        .bt_donwload:hover{
+            color: gainsboro;
+        }
+        .contato_rapido{
+            margin-left: 11px;
+            color:linear-gradient(165deg, #1b98e0,blueviolet);
+            text-decoration: none;
+        }
+        .corpo_foto_e_versao{
+            padding-right: 12px;
+            text-align: right;
+            margin-top: -370px;
+        }
+        .foto{
+            height:240px;
+            width: 312px;
+        }
+        .versao{
+            color: gray;
+        }
+        .nav_bt_menu{
+            text-align: right;
+            margin-top: -33px;
+            visibility: hidden;
+        }
+        .image_menu {
+            width: 80px;
+            height: 50px;
+            padding-right: 40px;
+        }
+        .more{
+            text-align: right;
+            margin-top: -39px;
+            padding-right: 55px;
+
+        }
+        .more a{
+            background: linear-gradient(165deg, #1b98e0,blueviolet);
+            padding: 10px;
+            border-radius: 5%;
+            text-decoration: none;
+            color: white;
+        }
+        .scroll{
+            height: 300px;
+            text-align: center;
+            color: grey;
+            visibility: hidden;
+            margin-top: 46px;
+            padding-right: 60px;
+            background-color: white;
+        }
+        .scroll a{
+            color: gray;
+            text-decoration: none;
+            text-align: center;
+            padding: 7.1px;
+            display: block;
+        }
+        .bt_more{
+            background: linear-gradient(165deg, #1b98e0,blueviolet);
+            padding: 15px;
+            height: 18px;
+            border-radius: 5%;
+            text-decoration: none;
+            color: white;
+        }
+        .corpo_bt{
+            display: flex;
+            max-width: 850px;
+            height: 40px;
+            overflow-x: scroll;
+            scrollbar-width: none;
+        }
+        .cx_bt{
+            padding: 8px;
+        }
+        .cx_bt a{
+            background: linear-gradient(165deg, #1b98e0,blueviolet);
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 3%;
+            object-fit: cover;
+        }
+
+        @media (max-width:850px){
+            .links_titulo{
+                visibility: hidden;
+            }
+            .nav_bt_menu{
+                visibility: visible;
+            }
+            .more{
+                visibility: hidden;
+            }
+            .corpo_foto_e_versao{
+                text-align: left;
+                padding-right: 0;
+                margin-top: 50px;
+            }
+            .foto{
+                margin-left: -55px;
+                height:220px;
+                width: 300px;
+            }
+            .versao{
+                color: gray;
+                text-align: left;
+                margin-left: 14px;
+
+            }
+            .bt_donwload{
+                width: 300px;
+            }
+            .parag_titulo{
+                text-align: left;
+            }
+            .info_sobre_software{
+                text-align: left;
+            }
+            .open{
+                visibility: visible;
+            }
+        }
+        @media (max-width:722px) {
+                .nav_bt_menu{
+                    margin-top: -44px;
+                }
+        }
+        @media (max-width:484px) {
+            .nav_bt_menu{
+                margin-top: -68px;
+            }
+        }
+        @media (max-width:357px) {
+            .nav_bt_menu{
+                margin-top: -83px;
+            }
+        }
+        @media (max-width:331px) {
+            .nav_bt_menu{
+                margin-top: -108px;
+            }
+        }
+        @media (max-width:280px) {
+            .nav_bt_menu{
+                margin-top: -110px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Seje Org</h2>
+        <nav class="links_titulo">
+            <a href="progamacao.html">Programação</a>
+            <a href="home.html">Home</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="desenvolvimento.html">Desenvolvimento</a>
+            <a class="bt_header" href="sobre.html">Sobre</a>
+            <a class="bt_header" href="contactos.html">Contactos</a>
+            <select name="" id="">
+                <option value="">Light Website</option>
+                <option value="">Dark Website</option>
+            </select>
+        </nav>
+     
+        <nav class="nav_bt_menu">
+            <a href="#"><img onclick="menushow()" class="image_menu" src="img/17094107.png" alt=""></a>
+        </nav>
+        <nav class="more">
+            <a href="pagina.html">Inicio</a>
+        </nav>
+        <nav class="scroll">
+            <a href="progamacao.html">Programação</a>
+            <a href="home.html">Home</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="desenvolvimento.html">Desenvolvimento</a>
+            <a class="bt_header" href="sobre.html">Sobre</a>
+            <a class="bt_header" href="contactos.html">Contactos</a>
+            <a href="pagina.html" class="bt_more">Inicio</a>
+        </nav>
+        
+    </header>
+
+    <div class="corpo_site">
+        <div class="corpo_bt">
+            <div class="cx_bt">
+                <a href="https://www.instagram.com/sejeseje56?igsh=YzljYTk1ODg3Zg==">Instagram</a>
+            </div>
+            <div class="cx_bt">
+                <a href="https://www.youtube.com/@Sebastiao_Collen_Adestramento">YouTube</a>
+            </div>
+            <div class="cx_bt">
+                <a href="tel:947838610">WattsApp</a>
+            </div>
+            <div class="cx_bt">
+                <a href="https://www.facebook.com/profile.php?id=61559249279054">Facebook</a>
+            </div>
+            <div class="cx_bt">
+                <a href="https://www.facebook.com/profile.php?id=100060258256037">Blogs</a>
+            </div>
+            <div class="cx_bt">
+                <a href="https://www.facebook.com/profile.php?id=100060258256037">Páginas</a>
+            </div>
+            <div class="cx_bt">
+                <a href="https://chat.whatsapp.com/KmHXEdT57mJBO61IUVjrp8">Grupos</a>
+            </div>
+        
+        </div>
+    
+        <p class="parag_titulo">Conheça O<br> Melhor da Programação<br>Com a equipe Seje.</p>
+
+        <p class="info_sobre_software">As Organizações são especialistas na criação de software bem
+        <br>bem como no domínio de WebSites, Montagem de rede de PC,
+        <br>Analises de Banco de dados bem como em outras áreas da TICS 
+        <br>O nosso Foco com linguagens são: HTML, CSS, JS, SQL e Python.    
+        </p>
+
+        <br>
+        <p class="info_sobre_software">Aproveite e teste as nossas Habilidades
+        <br>
+        com o Nanofacturas Um Programa de Facturação 100% Angolano.
+        <br>
+        <br>
+        </p>
+        <br>
+
+        <a class="bt_donwload"   href="app/Nanofacturas 2.0 Setup.zip">Fazer Donwload</a>
+
+        <br>
+        <br>
+        <br>
+
+        <a class="contato_rapido" href="mailto:sebastiaocollen@gmail.com">Fale Conosco Clicando Aqui*</a>
+    
+        <nav class="corpo_foto_e_versao">
+            <img style="background-color: white;" class="foto" src="img/Desenvolvedor-de-software2.png" alt="">
+            <br><br>
+            <p class="versao">Experiência HTML , CSS ,JavaScript , SQL e Python</p>
+        </nav>
+        
+        
+     
+
+    </div>
+</body>
+</html>
